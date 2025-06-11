@@ -1,4 +1,3 @@
-//메인클래스
 package com.dylee.learn_spring_framework;
 
 import com.dylee.learn_spring_framework.game.GameRunner;
@@ -6,7 +5,7 @@ import com.dylee.learn_spring_framework.game.MarioGame;
 import com.dylee.learn_spring_framework.game.PacmanGame;
 import com.dylee.learn_spring_framework.game.SuperContraGame;
 
-public class AppGamingBasicJava {
+public class App01GamingBasicJava {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
