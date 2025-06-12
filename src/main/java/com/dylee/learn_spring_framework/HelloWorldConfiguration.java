@@ -3,6 +3,15 @@ package com.dylee.learn_spring_framework;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+/*record: 간단한 데이터 객체를 만들기 위한 클래스타입
+*name(), age() getter 생성
+*toString(), equals(), hashCode() 자동 생성
+*생성자도 자동 생성
+*/
+record Person (String name, int age) {};
+record Address (String firstLine, String city) {};
+
+
 //spring 설정 클래스
 @Configuration
 public class HelloWorldConfiguration {
@@ -11,6 +20,27 @@ public class HelloWorldConfiguration {
     // 아래 name() 메서드는 "Ranga"라는 문자열 객체를 생성하여 빈으로 관리함
 	@Bean
 	public String name() {
-		return "Ranga";
+		return "도연";
 	}
+	
+	@Bean
+	public int age() {
+		return 32;
+	}
+	
+	@Bean
+	public Person person() {
+		return new Person("효신", 45);	
+	}
+	
+	@Bean
+	public Person person2MethodCall() {
+		return new Person(name(), age());	 //name, age
+	}
+	
+	@Bean(name = "Address2")
+	public Address address() {
+		return new Address("충장로", "광주");
+	}
+	
 }
