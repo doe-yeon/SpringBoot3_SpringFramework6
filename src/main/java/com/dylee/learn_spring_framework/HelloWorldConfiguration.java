@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Configuration;
 *toString(), equals(), hashCode() 자동 생성
 *생성자도 자동 생성
 */
-record Person (String name, int age) {};
+record Person (String name, int age, Address address) {};
 record Address (String firstLine, String city) {};
 
 
@@ -30,16 +30,27 @@ public class HelloWorldConfiguration {
 	
 	@Bean
 	public Person person() {
-		return new Person("효신", 45);	
+		return new Person("효신", 45, new Address("충장로", "광주"));	
 	}
 	
 	@Bean
 	public Person person2MethodCall() {
-		return new Person(name(), age());	 //name, age
+		return new Person(name(), age(), address());
+	}
+	
+	@Bean
+	public Person person3Parameters(String name, int age, Address address2) {
+		//name, age, address2
+		return new Person(name, age, address2);
 	}
 	
 	@Bean(name = "Address2")
 	public Address address() {
+		return new Address("충장로", "광주");
+	}
+	
+	@Bean(name = "Address3")
+	public Address address3() {
 		return new Address("충장로", "광주");
 	}
 	
