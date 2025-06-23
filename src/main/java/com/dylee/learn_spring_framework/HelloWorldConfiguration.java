@@ -2,6 +2,7 @@ package com.dylee.learn_spring_framework;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 
 /*record: 간단한 데이터 객체를 만들기 위한 클래스타입
 *name(), age() getter 생성
@@ -39,12 +40,19 @@ public class HelloWorldConfiguration {
 	}
 	
 	@Bean
-	public Person person3Parameters(String name, int age, Address address2) {
+	public Person person3Parameters(String name, int age, Address address3) {
 		//name, age, address2
-		return new Person(name, age, address2);
+		return new Person(name, age, address3);
+	}
+
+	@Bean
+	public Person person4Parameters(String name, int age, Address address) {
+		//name, age, address2
+		return new Person(name, age, address);
 	}
 	
 	@Bean(name = "Address2")
+	@Primary
 	public Address address() {
 		return new Address("충장로", "광주");
 	}

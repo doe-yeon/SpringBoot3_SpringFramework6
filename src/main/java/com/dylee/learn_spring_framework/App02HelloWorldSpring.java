@@ -1,5 +1,7 @@
 package com.dylee.learn_spring_framework;
 
+import java.util.Arrays;
+
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class App02HelloWorldSpring {
@@ -30,6 +32,7 @@ public class App02HelloWorldSpring {
 
 		// 'person2MethodCall'이라는 이름의 Bean을 조회 → new Person("도연", 32)
 		System.out.println("'person2MethodCall' Bean: " + context.getBean("person2MethodCall"));
+		
 		// 'person3Parameters'이라는 이름의 Bean을 조회 → new Person("도연", 32)
 		System.out.println("'person3Parameters' Bean: " + context.getBean("person3Parameters"));
 
@@ -38,8 +41,15 @@ public class App02HelloWorldSpring {
 
 		// Address 타입의 Bean을 타입 기준으로 조회 → new Address("충장로", "광주")
 		// (동일한 타입의 Bean이 하나만 등록된 경우에만 가능)
+		System.out.println("Address Bean (by type): " + context.getBean(Person.class));
+	
 		System.out.println("Address Bean (by type): " + context.getBean(Address.class));
 		
+		
+		
+		
+		//System.out.println
+		//Arrays.stream(context.getBeanDefinitionNames()).forEach(System.out::println);
 	}
 
 }
