@@ -68,7 +68,7 @@ public class HelloWorldConfiguration {
 	@Bean(name = "Address3")
 	@Qualifier("address3qualifier")
 	public Address address3() {
-		return new Address("충장로", "광주");
+		return new Address("첨단", "광주");
 	}
 	
 }

@@ -45,7 +45,8 @@ public class App02HelloWorldSpring {
 	
 		System.out.println("Address Bean (by type): " + context.getBean(Address.class));
 		
-		
+		System.out.println("'person5Qualifier' Bean: " + context.getBean("person5Qualifier"));
+
 		
 		
 		//System.out.println
